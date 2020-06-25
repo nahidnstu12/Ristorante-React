@@ -1,14 +1,31 @@
 import React from 'react';
-import {
-    Breadcrumb,BreadcrumbItem,Card,CardBody,CardHeader,Media
-} from 'reactstrap';
-import {
-    Link
-} from 'react-router-dom';
+import { Breadcrumb,BreadcrumbItem,Card,CardBody,CardHeader,Media} from 'reactstrap';
+import {Link} from 'react-router-dom';
+
+function RenderLeaders({leader}){
+    return(
+             <Media>                      
+            <Media left href="#" className="m-4">
+                <Media object src={leader.image} alt={leader.name} />
+            </Media>
+            <Media body className="my-4">
+                <Media heading >
+                   {leader.name}
+                </Media>
+                <Media className="mb-4">
+                   {leader.designation}
+                </Media>
+                {leader.description}
+            </Media>
+            </Media>
+    )
+}
 function About(props) {
     const leaders = props.leaders.map((leader) => {
         return ( 
-            <p> Leader {}</p>
+            <div>
+            <RenderLeaders leader={leader}/>
+            </div>
         );
     });
     return ( 
@@ -75,9 +92,7 @@ function About(props) {
                 <div className = "col-12" >
                     <h2> Corporate Leadership</h2>
                     <div className = "col-12" >
-                        <Media list>
-                            {/* {leaders} */}
-                        </Media>
+                        {leaders}                        
                     </div>
                 </div>
             </div>
