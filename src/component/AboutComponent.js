@@ -21,9 +21,9 @@ function RenderLeaders({leader}){
     )
 }
 function About(props) {
-    const leaders = props.leaders.map((leader) => {
+    const leaders = props.leaders.map((leader,index) => {
         return ( 
-            <div>
+            <div key={index}>
             <RenderLeaders leader={leader}/>
             </div>
         );

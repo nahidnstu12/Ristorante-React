@@ -11,7 +11,7 @@ function RenderDish({dish}){
                     <CardTitle>{dish.name}</CardTitle>
                     <CardText>{dish.description}</CardText>
                 </CardBody>
-            </Card>
+            </Card> 
     ) 
 }
 function RenderComment({comments}){
