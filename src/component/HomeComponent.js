@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,CardTitle, CardSubtitle} from 'reactstrap';
 import {Loading} from './LoadingComponent';
+import {baseUrl} from '../shared/baseUrl'
 
 
 function Home(props) {
@@ -12,7 +13,7 @@ function Home(props) {
                 <RenderCard item={props.dish} isLoading={props.dishesLoading} errMess={props.dishesErrMess}/>
             </div>
             <div className="col-12 col-md m-1">
-                <RenderCard item={props.promotion} isLoading={props.dishesLoading} errMess={props.dishesErrMess}/>
+                <RenderCard item={props.promotion} isLoading={props.promoLoading} errMess={props.promoErrMsg}/>
             </div>
             <div className="col-12 col-md m-1">
                 <RenderCard item={props.leader} isLoading={props.dishesLoading} errMess={props.dishesErrMess}/>
@@ -33,17 +34,17 @@ function RenderCard ({item,isLoading,errMess}) {
             <h4>{errMess}</h4>
         );
     }
-    else  
+    else { 
     return(
     <Card>
-        <CardImg src={item.image} alt={item.name}></CardImg>
+        <CardImg src={baseUrl+item.image} alt={item.name} />
         <CardBody>
-            <CardTitle>{item.name}</CardTitle>
-            {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null}
+            <CardTitle><strong>{item.name}</strong></CardTitle>
+            {item.designation ? <CardSubtitle><em>{item.designation}</em></CardSubtitle> : null}
             <CardText>{item.description}</CardText>
         </CardBody>
     </Card>
-    )
+    )}
 }
 
 export default Home;  

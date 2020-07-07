@@ -2,14 +2,14 @@ import React from 'react'
 import { Card, CardImg, CardImgOverlay,CardTitle,Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
-
+import {baseUrl} from '../shared/baseUrl'
 
 function RenderItem({dish}){
     
     return (
         <Card>
             <Link to={`/menu/${dish.id}`}>
-            <CardImg width="100%" src={dish.image} alt={dish.name} />
+            <CardImg width="100%" src={ baseUrl+dish.image} alt={dish.name} />
             <CardImgOverlay body className="ml-5">
                 <CardTitle heading>{dish.name}</CardTitle>
             </CardImgOverlay>  
@@ -19,6 +19,7 @@ function RenderItem({dish}){
 }
 const Menu = props =>{
     const menu = props.dishes.dishes.map((dish)=>{
+        // console.log(dish)
         return (
             <div className="col-12 col-md-5 mt-1" 
                 key={dish.id}>
@@ -47,7 +48,7 @@ const Menu = props =>{
         </div> 
         )
     }
-    else
+    else{
     return (   
     <div className="container">
     <div className="row">
@@ -64,7 +65,7 @@ const Menu = props =>{
         {menu}
     </div>
 </div>
-)
+)}
 }
-export default Menu
+export default Menu;
     
