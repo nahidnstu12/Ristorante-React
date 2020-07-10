@@ -24,20 +24,17 @@ export const fetchDishes = () => (dispatch) => {
     .catch(error => dispatch((dishesFailed(error.message))));
 };
 
-export const dishesLoading = () =>({
+const dishesLoading = () =>({
     type:ActionTypes.LOAD_DISHES
 });
-
-export const dishesFailed = (errMsg) =>({
+ const dishesFailed = (errMsg) =>({
     type:ActionTypes.FAIL_DISHES,
     payload:errMsg
 });
-
-export const addDishes = (dishes) => ({
+ const addDishes = (dishes) => ({
     type:ActionTypes.ADD_DISHES,
     payload:dishes
-});
-export const addComments = (comments) => ({
+}); const addComments = (comments) => ({
     type: ActionTypes.ADD_COMMENTS,
     payload: comments
 });
@@ -61,11 +58,11 @@ export const fetchComment = () => dispatch => {
     .catch(error => dispatch(commentsFailed(error.message)));
 };
 
-export const commentsFailed = errMsg => ({
+ const commentsFailed = errMsg => ({
     type:ActionTypes.COMMENTS_FAILED,
     payload:errMsg
 });
-export const addComment = comment => ({
+ const addComment = comment => ({
     type:ActionTypes.ADD_COMMENT,
     payload:comment
 });
@@ -131,7 +128,7 @@ export const postFeedback = (firstname,lastname,email,tel,agree,contactType,mess
             alert('Your Feedback could not be posted\nError: '+error.message); });
 
 }
-export const addFeedback = (feedback)=>({
+ const addFeedback = (feedback)=>({
     type:ActionTypes.ADD_FEEDBACK,
     payload:feedback
 })
@@ -157,14 +154,14 @@ export const fetchPromos = () => dispatch => {
     .then(promotions=> dispatch(addPromos(promotions)))
     .catch(error => dispatch((promosFailed(error.message))));
 };
-export const promosLoading = () => ({
+ const promosLoading = () => ({
     type:ActionTypes.PROMOS_LOADING
 });
-export const promosFailed = errMsg => ({
+ const promosFailed = errMsg => ({
     type:ActionTypes.PROMOS_FAILED,
     payload:errMsg
 });
-export const addPromos = promos => ({
+ const addPromos = promos => ({
     type:ActionTypes.ADD_PROMOS,
     payload:promos
 })
@@ -191,14 +188,14 @@ export const fetchLeaders = () => dispatch => {
     .then(leaders=> dispatch(addLeader(leaders)))
     .catch(error => dispatch((leaderFailed(error.message))));
 };
-export const leaderLoading = () => ({
+ const leaderLoading = () => ({
     type:ActionTypes.LEADER_LOADING
 });
-export const leaderFailed = errMsg => ({
+ const leaderFailed = errMsg => ({
     type:ActionTypes.LEADER_FAILED,
     payload:errMsg
 });
-export const addLeader = leaders => ({
+ const addLeader = leaders => ({
     type:ActionTypes.ADD_LEADER,
     payload:leaders
 })
