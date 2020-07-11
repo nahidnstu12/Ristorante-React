@@ -3,7 +3,7 @@
 Demo Website of Ristorante con fusion developed during Coursera's Front-End Web Development with React
 
 ## How to launch the project locally     
-   **[Clone the repository](git clone https://nahid_cste12@bitbucket.org/nahid_cste12/react-practise.git )** from : "git clone https://nahid_cste12@bitbucket.org/nahid_cste12/react-practise.git " 
+   **[Clone the repository](git clone git@github.com:nahidnstu12/Ristorante-React.git )** from : "git clone git@github.com:nahidnstu12/Ristorante-React.git " 
    
     
 ### For launching the project: 
@@ -26,7 +26,8 @@ Demo Website of Ristorante con fusion developed during Coursera's Front-End Web 
   4. Use one of the following commnds to run:
   `yarn start`
    `npm start
-   `
+  `
+  5. **[Github Demo]( https://nahidnstu12.github.io/Ristorante-React/ )**
 
 ## Acknoledgements
 

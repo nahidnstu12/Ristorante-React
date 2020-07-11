@@ -9,7 +9,11 @@ import DishDetail from './DishDetail';
 import {Switch,Route,Redirect,withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {actions} from 'react-redux-form';
-import {fetchDishes,fetchComment,fetchPromos,fetchLeaders,postComment,postFeedback} from '../redux/ActionCreators';
+import {fetchDishes} from '../redux/ActionsCreators/DishesActions';
+import {fetchPromos} from '../redux/ActionsCreators/PromoActions';
+import {fetchLeaders} from '../redux/ActionsCreators/LeadersActions';
+import {fetchComment,postComment} from '../redux/ActionsCreators/CommentsActions';
+import {postFeedback} from '../redux/ActionsCreators/FeedbackActions';
 import {TransitionGroup,CSSTransition} from 'react-transition-group';
 
 const mapStateToProps = state => {
@@ -34,11 +38,6 @@ const mapDispacthToProps = dispach =>({
 
   
 class Main extends Component {
-  constructor(props)
-  { 
-    super(props);
-    
-  }
   
   componentDidMount(){
     this.props.fetchComment();

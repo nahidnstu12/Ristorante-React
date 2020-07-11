@@ -24,7 +24,7 @@ function Home(props) {
     );
 }
 
-function RenderCard ({item,isLoading,errMess}) {
+export function RenderCard ({item,isLoading,errMess}) {
     if (isLoading) {
         return(
             <Loading />
